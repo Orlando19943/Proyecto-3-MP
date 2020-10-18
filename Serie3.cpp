@@ -30,7 +30,7 @@ int main()
 {
     #pragma omp parallel private(n)
     {
-        #pragma omp for ordered         //Ciclo for para realizar el calculo de la serie
+        #pragma omp for                 //Ciclo for para realizar el calculo de la serie
         for(n = 1;n<=limite;n++)
         {
             #pragma omp atomic update   //Seccion atomica para actualizar la variable "resultado" por todos los hilos
