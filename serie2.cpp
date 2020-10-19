@@ -16,7 +16,7 @@
 int main(){
 	
 	float sum = 0.00;
-	int nth = 1000000000;
+	int nth = 10000000;
 	
 	#pragma omp parallel
 	{
