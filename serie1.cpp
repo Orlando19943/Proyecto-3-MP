@@ -70,6 +70,7 @@ int main(){
     cout << endl;
     cout << "El valor de euler calculado con los primeros " << N_TERMINOS << " términos es: " << euler << endl;
 
+    cout.precision(3);
     cout << "El porcentaje de error fue de " << 100 * abs(euler - REAL_EULER) / REAL_EULER << "%" << endl;
     return 0;
 }
