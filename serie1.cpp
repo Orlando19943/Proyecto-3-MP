@@ -21,9 +21,11 @@ using namespace std;
 // =================CONSTANTES =========================
 
 // Cantidad de términos que se van a usar en el cálculo
-#define N_TERMINOS 100
+#define N_TERMINOS 200
 // El valor real de euler para porcentaje de error
 #define REAL_EULER 2.71828182846
+// La cantidad de hilos que se usarán en el programa
+#define N_THREADS 100
 
 // ================ FUNCIONES ÚTILES ====================
 
@@ -56,7 +58,7 @@ int main(){
     cout.precision(30);         // Para que imprima todos los decimales.
 
     // Hago un ciclo con paralelismo para que cada hilo cálcule el término
-    #pragma omp for private (termino) 
+    #pragma omp for private (termino) num_threads(N_THREADS) 
     for(i = 0; i < N_TERMINOS; i++){
         // El valor de cada término es 1/n!
         termino = 1/factorial(i);
