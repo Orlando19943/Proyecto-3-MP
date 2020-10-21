@@ -40,6 +40,6 @@ int main(){
 		}
 	
 	}  
-    printf("La sumatoria converge a = %1.11f\n",sum);
+    printf("La sumatoria converge a = %f\n",sum);
     return 0;
 } 
