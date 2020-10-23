@@ -18,6 +18,7 @@ Pablo Mendez 19195
 
 using namespace std;
 #define limite 100000                   //Simulacion de infinito
+#define threads 100000                  //Hilos que trabajaran
 int n = 1;                              //Inicio de la serie
 double resultado = 0;                   //Resultado de la serie
 //Funcion para realizar la operacion de la serie (1-1/√n)^n
@@ -30,6 +31,9 @@ int main()
 {
     #pragma omp parallel private(n)
     {
+        #ifdef _OPENMP
+		omp_set_num_threads(threads);
+		#endif
         #pragma omp for                 //Ciclo for para realizar el calculo de la serie
         for(n = 1;n<=limite;n++)
         {
